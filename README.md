@@ -1,54 +1,74 @@
----
-page_type: sample
-languages:
-- csharp
-products:
-- dotnet
-description: "Add 150 character max description"
-urlFragment: "update-this-to-unique-url-stub"
----
 
-# Official Microsoft Sample
+# Semantics-Guided Neural Networks for Efficient Skeleton-Based Human Action Recognition (SGN)
 
-<!-- 
-Guidelines on README format: https://review.docs.microsoft.com/help/onboard/admin/samples/concepts/readme-template?branch=master
+## Introduction
+We propose a simple yet effective semantics-guided neural network (SGN) for skeleton-based action recognition. We explicitly introduce the high level semantics of joints (joint type and frame index) into the network to enhance the feature representation capability. In addition, we exploit the relationship of joints hierarchically through two modules, i.e., a joint-level module for modeling the correlations of joints in the same frame and a framelevel module for modeling the dependencies of frames by taking the joints in the same frame as a whole. A strong baseline is proposed to facilitate the study of this field. With an order of magnitude smaller model size than most previous works, SGN achieves the state-of-the-art performance on the NTU60 dataset.
+ 
 
-Guidance on onboarding samples to docs.microsoft.com/samples: https://review.docs.microsoft.com/help/onboard/admin/samples/process/onboarding?branch=master
+This repository holds the codes and methods for the following paper:
 
-Taxonomies for products and languages: https://review.docs.microsoft.com/new-hope/information-architecture/metadata/taxonomies?branch=master
--->
+**Semantics-Guided Neural Networks for Efficient Skeleton-Based Human Action Recognition**. CVPR, 2020, [paper](https://arxiv.org/abs/1904.01189)
 
-Give a short description for your sample here. What does it do and why is it important?
 
-## Contents
+## Flowchart
 
-Outline the file contents of the repository. It helps users navigate the codebase, build configuration and any related assets.
+![image](https://github.com/microsoft/View-Adaptive-Neural-Networks-for-Skeleton-based-Human-Action-Recognition/blob/master/image/Flowchart.png)
 
-| File/folder       | Description                                |
-|-------------------|--------------------------------------------|
-| `src`             | Sample source code.                        |
-| `.gitignore`      | Define what to ignore at commit time.      |
-| `CHANGELOG.md`    | List of changes to the sample.             |
-| `CONTRIBUTING.md` | Guidelines for contributing to the sample. |
-| `README.md`       | This README file.                          |
-| `LICENSE`         | The license for the sample.                |
+Figure 1: Flowchat of the end-to-end view adaptive neural network. It consists of a main classification network and a view adaptation subnetwork. The view adaptation subnetwork automatically determines the virtual observation viewpoints and transforms the skeleton input to representations under the new viewpoints for classification by the main classification network. The entire network is end-toend trained to optimize the classification performance.
+
+## Framework
+
+![image](https://github.com/microsoft/View-Adaptive-Neural-Networks-for-Skeleton-based-Human-Action-Recognition/blob/master/image/Framework.png)
+
+Figure 2:   Framework of the proposed end-to-end Semantics-Guided Neural Network (SGN). 
 
 ## Prerequisites
+The code is built with following libraries:
+- Python 3.6
+- [Anaconda](https://www.anaconda.com/)
+- [PyTorch](https://pytorch.org/) 1.3
 
-Outline the required components and tools that a user might need to have on their machine in order to run the sample. This can be anything from frameworks, SDKs, OS versions or IDE releases.
+## Data Preparation
 
-## Setup
+We need to first dowload the [NTU-RGB+D](https://github.com/shahroudy/NTURGB-D) dataset
 
-Explain how to prepare the sample once the user clones or downloads the repository. The section should outline every step necessary to install dependencies and set up any settings (for example, API keys and output folders).
+- Extract the dataset to ./data/ntu/nturgb+d_skeletons/
+- Process the data
+```bash
+ cd ./data/ntu
+ # Get skeleton of each performer
+ python get_raw_skes_data.py
+ # Remove the bad skeleton 
+ python get_raw_denoised_data.py
+ # Transform the skeleton to the center of the first frame
+ python seq_transformation.py
+```
 
-## Running the sample
 
-Outline step-by-step instructions to execute the sample and see its output. Include steps for executing the sample from the IDE, starting specific services in the Azure portal or anything related to the overall launch of the code.
+## Training
 
-## Key concepts
+```bash
+python  main.py --model SGN --train 1
+```
 
-Provide users with more context on the tools and services used in the sample. Explain some of the code that is being used and how services interact with each other.
+## Testing
 
+```bash
+python  main.py --model SGN --train 0
+```
+
+## Reference
+If you find our papers and repo useful, please cite our papers. Thanks!
+
+```
+@article{zhang2019semantics,
+  title={Semantics-Guided Neural Networks for Efficient Skeleton-Based Human Action Recognition},
+  author={Zhang, Pengfei and Lan, Cuiling and Zeng, Wenjun and Xing, Junliang and Xue, Jianru and Zheng, Nanning},
+  journal={CVPR},
+  year={2020}
+}
+
+```
 ## Contributing
 
 This project welcomes contributions and suggestions.  Most contributions require you to agree to a
