@@ -1,9 +1,11 @@
-
 # Semantics-Guided Neural Networks for Efficient Skeleton-Based Human Action Recognition (SGN)
 
 ## Introduction
 We propose a simple yet effective semantics-guided neural network (SGN) for skeleton-based action recognition. We explicitly introduce the high level semantics of joints (joint type and frame index) into the network to enhance the feature representation capability. In addition, we exploit the relationship of joints hierarchically through two modules, i.e., a joint-level module for modeling the correlations of joints in the same frame and a framelevel module for modeling the dependencies of frames by taking the joints in the same frame as a whole. A strong baseline is proposed to facilitate the study of this field. With an order of magnitude smaller model size than most previous works, SGN achieves the state-of-the-art performance on the NTU60 dataset.
  
+![image](https://github.com/microsoft/SGN/blob/master/images/para.PNG)
+
+Figure 1: Comparisons of different methods on NTU60 (CS setting) in terms of accuracy and the number of parameters. The proposed SGN model achieves the best performance with an order of magnitude smaller model size.
 
 This repository holds the codes and methods for the following paper:
 
@@ -13,7 +15,7 @@ This repository holds the codes and methods for the following paper:
 ## Framework
 ![image](https://github.com/microsoft/SGN/blob/master/images/framework.PNG)
 
-Figure 1: Framework of the proposed end-to-end Semantics-Guided Neural Network (SGN). 
+Figure 2: Framework of the proposed end-to-end Semantics-Guided Neural Network (SGN). 
 
 ## Prerequisites
 The code is built with following libraries:
