@@ -433,5 +433,4 @@ def get_raw_denoised_data():
     print('Found %d files that have missing data' % missing_count)
 
 if __name__ == '__main__':
-
     get_raw_denoised_data()
