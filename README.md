@@ -10,16 +10,8 @@ This repository holds the codes and methods for the following paper:
 **Semantics-Guided Neural Networks for Efficient Skeleton-Based Human Action Recognition**. CVPR, 2020, [paper](https://arxiv.org/abs/1904.01189)
 
 
-## Flowchart
-
-![image](https://github.com/microsoft/View-Adaptive-Neural-Networks-for-Skeleton-based-Human-Action-Recognition/blob/master/image/Flowchart.png)
-
-Figure 1: Flowchat of the end-to-end view adaptive neural network. It consists of a main classification network and a view adaptation subnetwork. The view adaptation subnetwork automatically determines the virtual observation viewpoints and transforms the skeleton input to representations under the new viewpoints for classification by the main classification network. The entire network is end-toend trained to optimize the classification performance.
-
 ## Framework
-
-![image](https://github.com/microsoft/View-Adaptive-Neural-Networks-for-Skeleton-based-Human-Action-Recognition/blob/master/image/Framework.png)
-
+![image](https://github.com/microsoft/SGN/blob/master/images/framework.pdf)
 Figure 2:   Framework of the proposed end-to-end Semantics-Guided Neural Network (SGN). 
 
 ## Prerequisites
