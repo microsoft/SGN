@@ -152,3 +152,4 @@ if __name__ == '__main__':
 
     with open(frames_drop_pkl, 'wb') as fw:
         pickle.dump(frames_drop_skes, fw, pickle.HIGHEST_PROTOCOL)
+        
