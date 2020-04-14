@@ -11,8 +11,9 @@ This repository holds the codes and methods for the following paper:
 
 
 ## Framework
-![image](https://github.com/microsoft/SGN/blob/master/images/framework.pdf)
-Figure 2:   Framework of the proposed end-to-end Semantics-Guided Neural Network (SGN). 
+![image](https://github.com/microsoft/SGN/blob/master/images/framework.png)
+
+Figure 1: Framework of the proposed end-to-end Semantics-Guided Neural Network (SGN). 
 
 ## Prerequisites
 The code is built with following libraries:
