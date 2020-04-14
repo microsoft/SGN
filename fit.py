@@ -1,3 +1,5 @@
+# Copyright (c) Microsoft Corporation. All rights reserved.
+# Licensed under the MIT License.
 def add_fit_args(parser):
     """
     parser : argparse.ArgumentParser
