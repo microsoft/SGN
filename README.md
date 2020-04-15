@@ -10,9 +10,6 @@ We propose a simple yet effective semantics-guided neural network (SGN) for skel
 
 Figure 1: Comparisons of different methods on NTU60 (CS setting) in terms of accuracy and the number of parameters. The proposed SGN model achieves the best performance with an order of magnitude smaller model size.
 
-This repository holds the codes and methods for the following paper:
-
-**Semantics-Guided Neural Networks for Efficient Skeleton-Based Human Action Recognition**. CVPR, 2020, [paper](https://arxiv.org/abs/1904.01189)
 
 
 ## Framework
@@ -63,7 +60,12 @@ python  main.py --model SGN --train 0 --case 1
 ```
 
 ## Reference
-If you find our papers and repo useful, please cite our papers. Thanks!
+
+This repository holds the codes for the following paper:
+
+**Semantics-Guided Neural Networks for Efficient Skeleton-Based Human Action Recognition**. CVPR, 2020, [paper](https://arxiv.org/abs/1904.01189)
+
+If you find our paper and repo useful, please cite our paper. Thanks!
 
 ```
 @inproceedings{zhang2020semantics,
