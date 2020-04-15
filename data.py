@@ -80,15 +80,10 @@ class NTUDataLoaders(object):
     def create_datasets(self):
         if self.dataset == 'NTU':
             if self.case ==0:
-                path = os.path.join('/data2/pengfei/NTU', 'NTU_center_' + 'CS' + '_sklearn.h5')
+                self.metric = 'CS'
             elif self.case == 1:
-                path = os.path.join('/data2/pengfei/NTU', 'NTU_center_' + 'CV' + '_sklearn.h5')
-
-        elif self.dataset == 'NTU120':
-            if self.case ==0:
-                path = os.path.join('/data2/pengfei/NTU', 'NTU120_' + 'CS' + '.h5')
-            elif self.case == 1:
-                path = os.path.join('/data2/pengfei/NTU', 'NTU120_' + 'CS1' + '.h5')
+                self.metric = 'CV'
+            path = osp.join('./data/ntu', 'NTU_' + self.metric + '.h5')
 
         f = h5py.File(path , 'r')
         self.train_X = f['x'][:]
@@ -98,6 +93,12 @@ class NTUDataLoaders(object):
         self.test_X = f['test_x'][:]
         self.test_Y = np.argmax(f['test_y'][:], -1)
         f.close()
+
+        ## Put the training data and validation data togehter as ST-GCN
+        self.train_X = np.concatenate([self.train_X, self.val_X], axis=0)
+        self.train_Y = np.concatenate([self.train_Y, self.val_Y], axis=0)
+        self.val_X = self.test_X
+        self.val_Y = self.test_Y
 
     def collate_fn_fix_train(self, batch):
         """Puts each data field into a tensor with outer dimension batch size

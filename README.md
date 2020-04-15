@@ -51,6 +51,10 @@ python  main.py --model SGN --train 1
 
 ## Testing
 
+- Download the pre-trained models for NTU60 dataset through [Google Drive](https://drive.google.com/open?id=1-ArNmQqvTsQk9dQpk_cF-a8MPPwfsN23). Then put the models to ./results/NTU/SGN/
+
+
+- Test the pretrained models
 ```bash
 python  main.py --model SGN --train 0
 ```
