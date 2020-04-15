@@ -46,17 +46,20 @@ We need to first dowload the [NTU-RGB+D](https://github.com/shahroudy/NTURGB-D) 
 ## Training
 
 ```bash
-python  main.py --model SGN --train 1
+# For the CS setting
+python  main.py --model SGN --train 1 --case 0
+# For the CV setting
+python  main.py --model SGN --train 1 --case 1
 ```
 
 ## Testing
 
-- Download the pre-trained models for NTU60 dataset through [Google Drive](https://drive.google.com/open?id=1-ArNmQqvTsQk9dQpk_cF-a8MPPwfsN23). Then put the models to ./results/NTU/SGN/
-
-
-- Test the pretrained models
+- Test the pre-trained models (./results/NTU/SGN/)
 ```bash
-python  main.py --model SGN --train 0
+# For the CS setting
+python  main.py --model SGN --train 0 --case 0
+# For the CV setting
+python  main.py --model SGN --train 0 --case 1
 ```
 
 ## Reference
