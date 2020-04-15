@@ -8,7 +8,7 @@ We propose a simple yet effective semantics-guided neural network (SGN) for skel
 <img src="https://github.com/microsoft/SGN/blob/master/images/para.PNG" width = 50% height = 50% div align=center>
 </div>
 
-Figure 1: Comparisons of different methods on NTU60 (CS setting) in terms of accuracy and the number of parameters. The proposed SGN model achieves the best performance with an order of magnitude smaller model size.
+Figure 1: Comparisons of different methods on NTU60 (CS setting) in terms of accuracy and the number of parameters. Among these methods, the proposed SGN model achieves the best performance with an order of magnitude smaller model size.
 
 
 
