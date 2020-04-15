@@ -1,7 +1,7 @@
 # Semantics-Guided Neural Networks for Efficient Skeleton-Based Human Action Recognition (SGN)
 
 ## Introduction
-We propose a simple yet effective semantics-guided neural network (SGN) for skeleton-based action recognition. We explicitly introduce the high level semantics of joints (joint type and frame index) into the network to enhance the feature representation capability. In addition, we exploit the relationship of joints hierarchically through two modules, i.e., a joint-level module for modeling the correlations of joints in the same frame and a framelevel module for modeling the dependencies of frames by taking the joints in the same frame as a whole. A strong baseline is proposed to facilitate the study of this field. With an order of magnitude smaller model size than most previous works, SGN achieves the state-of-the-art performance on the NTU60 dataset.
+We propose a simple yet effective semantics-guided neural network (SGN) for skeleton-based action recognition. We explicitly introduce the high level semantics of joints (joint type and frame index) into the network to enhance the feature representation capability. In addition, we exploit the relationship of joints hierarchically through two modules, i.e., a joint-level module for modeling the correlations of joints in the same frame and a framelevel module for modeling the dependencies of frames by taking the joints in the same frame as a whole. A strong baseline is proposed to facilitate the study of this field. With an order of magnitude smaller model size than most previous works (as shown in Figure 1), SGN achieves the state-of-the-art performance on the NTU60 dataset.
  
 
 <div align=center>
@@ -59,11 +59,11 @@ python  main.py --model SGN --train 0
 If you find our papers and repo useful, please cite our papers. Thanks!
 
 ```
-@article{zhang2019semantics,
+@inproceedings{zhang2020semantics,
   title={Semantics-Guided Neural Networks for Efficient Skeleton-Based Human Action Recognition},
   author={Zhang, Pengfei and Lan, Cuiling and Zeng, Wenjun and Xing, Junliang and Xue, Jianru and Zheng, Nanning},
-  journal={CVPR},
-  year={2020}
+  booktitle={Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition},
+  year={2020},
 }
 
 ```
