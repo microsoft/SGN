@@ -47,7 +47,6 @@ class NTUDataLoaders(object):
                               shuffle=True, num_workers=num_workers,
                               collate_fn=self.collate_fn_fix_val, pin_memory=False, drop_last=True)
         elif self.aug ==1:
-
             return DataLoader(self.train_set, batch_size=batch_size,
                               shuffle=True, num_workers=num_workers,
                               collate_fn=self.collate_fn_fix_train, pin_memory=True, drop_last=True)
@@ -94,7 +93,7 @@ class NTUDataLoaders(object):
         self.test_Y = np.argmax(f['test_y'][:], -1)
         f.close()
 
-        ## Put the training data and validation data togehter as ST-GCN
+        ## Combine the training data and validation data togehter as ST-GCN
         self.train_X = np.concatenate([self.train_X, self.val_X], axis=0)
         self.train_Y = np.concatenate([self.train_Y, self.val_Y], axis=0)
         self.val_X = self.test_X

@@ -44,9 +44,9 @@ We need to first dowload the [NTU-RGB+D](https://github.com/shahroudy/NTURGB-D) 
 
 ```bash
 # For the CS setting
-python  main.py --model SGN --train 1 --case 0
+python  main.py --network SGN --train 1 --case 0
 # For the CV setting
-python  main.py --model SGN --train 1 --case 1
+python  main.py --network SGN --train 1 --case 1
 ```
 
 ## Testing
@@ -54,9 +54,9 @@ python  main.py --model SGN --train 1 --case 1
 - Test the pre-trained models (./results/NTU/SGN/)
 ```bash
 # For the CS setting
-python  main.py --model SGN --train 0 --case 0
+python  main.py --network SGN --train 0 --case 0
 # For the CV setting
-python  main.py --model SGN --train 0 --case 1
+python  main.py --network SGN --train 0 --case 1
 ```
 
 ## Reference

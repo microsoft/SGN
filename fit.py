@@ -10,6 +10,8 @@ def add_fit_args(parser):
                       help='the neural network to use')
     args.add_argument('--dataset', type=str, default='NTU',
                       help='select dataset to evlulate')
+    args.add_argument('--start-epoch', default=0, type=int,
+                      help='manual epoch number (useful on restarts)')
     args.add_argument('--max-epoches', type=int, default=150,
                       help='max number of epochs to run')
     args.add_argument('--lr', type=float, default=0.1,
@@ -26,6 +28,8 @@ def add_fit_args(parser):
                       help='the number of classes')
     args.add_argument('--case', type=int, default=0,
                       help='select which case')
+    args.add_argument('--train', type=int, default=1,
+                      help='train or test')
     args.add_argument('--workers', type=int, default=2,
                       help='number of data loading workers (default: 2)')
     args.add_argument('--monitor', type=str, default='val_acc',
