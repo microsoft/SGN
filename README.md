@@ -63,7 +63,7 @@ python  main.py --network SGN --train 0 --case 1
 
 ## Reference
 
-This repository holds the codes for the following paper:
+This repository holds the code for the following paper:
 
 [Semantics-Guided Neural Networks for Efficient Skeleton-Based Human Action Recognition](https://arxiv.org/abs/1904.01189). CVPR, 2020.
 
