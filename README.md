@@ -1,7 +1,9 @@
 # Semantics-Guided Neural Networks for Efficient Skeleton-Based Human Action Recognition (SGN)
 
 ## Introduction
-For skeleton-based action recognition, semantics of joints (joint type and frame index) is helpful to identify different joints when the coordinates of joints are same. We propose a simple yet effective semantics-guided neural network (SGN), which introduces the high level semantics of joints into the network to enhance the feature representation capability. In addition, we exploit the relationship of joints hierarchically through two modules, i.e., a joint-level module for modeling the correlations of joints in the same frame and a frame-level module for modeling the dependencies of frames by taking the joints in the same frame as a whole. A strong baseline is proposed to facilitate the study of this field. With an order of magnitude smaller model size than most previous works (as shown in Figure 1), SGN achieves the state-of-the-art performance on the NTU60 dataset.
+
+Skeleton-based human action recognition has attracted great interest thanks to the easy accessibility of the human skeleton data. Recently, there is a trend of using very deep feedforward neural networks to model the 3D coordinates of joints without considering the computational efficiency. In this work, we propose a simple yet effective semantics-guided neural network (SGN). We explicitly introduce the high level semantics of joints (joint type and frame index) into the network to enhance the feature representation capability. Intuitively, semantic information, i.e., the joint type and the frame index, together with dynamics (i.e., 3D coordinates) reveal the spatial and temporal configuration/structure of human body joints and are very important for action recognition.
+In addition, we exploit the relationship of joints hierarchically through two modules, i.e., a joint-level module for modeling the correlations of joints in the same frame and a frame-level module for modeling the dependencies of frames by taking the joints in the same frame as a whole. A strong baseline is proposed to facilitate the study of this field. With an order of magnitude smaller model size than most previous works (as shown in Figure 1), SGN achieves the state-of-the-art performance on the NTU60 dataset.
  
 
 <div align=center>
@@ -18,14 +20,14 @@ Figure 1: Comparisons of different methods on NTU60 (CS setting) in terms of acc
 Figure 2: Framework of the proposed end-to-end Semantics-Guided Neural Network (SGN). It consists of a joint-level module and a frame-level module. In DR, we learn the dynamics representation of a joint by fusing the position and velocity information of a joint. Two types of semantics, i.e., joint type and frame index, are incorporated into the joint-level module and the frame-level module, respectively. To model the dependencies of joints in the joint-level module, we use three GCN layers. To model the dependencies of frames, we use two CNN layers.
 
 ## Prerequisites
-The code is built with following libraries:
+The code is built with the following libraries:
 - Python 3.6
 - [Anaconda](https://www.anaconda.com/)
 - [PyTorch](https://pytorch.org/) 1.3
 
 ## Data Preparation
 
-We need to first dowload the [NTU-RGB+D](https://github.com/shahroudy/NTURGB-D) dataset
+We use the dataset of NTU60 RGB+D as an example for description. We need to first dowload the [NTU-RGB+D](https://github.com/shahroudy/NTURGB-D) dataset.
 
 - Extract the dataset to ./data/ntu/nturgb+d_skeletons/
 - Process the data
