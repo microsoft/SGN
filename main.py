@@ -23,7 +23,7 @@ from util import make_dir, get_num_classes
 parser = argparse.ArgumentParser(description='Skeleton-Based Action Recgnition')
 fit.add_fit_args(parser)
 parser.set_defaults(
-    network='3layer',
+    network='SGN',
     dataset = 'NTU',
     case = 0,
     batch_size=64,
